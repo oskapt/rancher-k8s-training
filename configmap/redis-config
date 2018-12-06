@@ -1,0 +1,4 @@
+# some comment
+maxmemory 2mb
+maxmemory-policy allkeys-lru
+
