@@ -171,7 +171,7 @@ CONFIG GET maxmemory-policy
 ### Server Deploy
 
 ```
-docker run -d --restart=unless-stopped -p 80:80 -v 443:443 -v /opt/rancher:/var/lib/rancher rancher/rancher:v2.1.2
+docker run -d --restart=unless-stopped -p 80:80 -p 443:443 -v /opt/rancher:/var/lib/rancher rancher/rancher:v2.1.2
 ```
 
 ### Node Deploy
