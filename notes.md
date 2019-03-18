@@ -32,7 +32,7 @@ kc get po
 ### Deployment
 
 ``` bash
-kc create deploy/nginx --image=nginx:1.14-alpine
+kc create deploy nginx --image=nginx:1.14-alpine
 kc get deploy
 kc get po
 kc delete deploy/nginx
@@ -192,5 +192,8 @@ docker run -d --restart=unless-stopped -p 80:80 -p 443:443 -v /opt/rancher:/var/
 ### Application Deployment
 
 - deploy `superseb/rancher-demo` as a workload
+    - expose port 8080
 - put an Ingress in front of it
+    - use `training.cl.monach.us`
 - scale it
+cat i

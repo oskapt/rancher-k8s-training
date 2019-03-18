@@ -8,4 +8,4 @@ spec:
   containers:
   - name: myapp-container
     image: busybox
-    command: ['sh', '-c', 'echo Hello Kubernetes! && sleep 10']
+    command: ['sh', '-c', 'echo Hello Kubernetes! && sleep 1']
