@@ -7,14 +7,14 @@ metadata:
     nginx.ingress.kubernetes.io/add-base-url: "true"
 spec:
   rules:
-  - host: training.cl.monach.us
+  - host: training-a.cl.monach.us
     http:
       paths:
       - path: /
         backend:
-          serviceName: nginx
-          servicePort: 80
+          serviceName: demo
+          servicePort: 8080
       - path: /rancher
         backend:
-          serviceName: hello-world
+          serviceName: nginx
           servicePort: 80
