@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rancher-demo
+  labels:
+    app: rancher-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rancher-demo
+  template:
+    metadata:
+      labels:
+        app: rancher-demo
+    spec:
+      containers:
+      - name: rancher-demo
+        image: monachus/rancher-demo:latest
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: color-config
+        resources:
+          limits:
+            cpu: "0.1"
+            memory: 128Mi

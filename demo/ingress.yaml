@@ -1,17 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: demo-ingress
+  name: rancher-demo
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: training-a.cl.monach.us
+  - host: rancher-demo.cl.monach.us
     http:
       paths:
       - path: /
         backend:
           serviceName: rancher-demo
-          servicePort: 80
-      - path: /nginx
-        backend:
-          serviceName: nginx
           servicePort: 80
