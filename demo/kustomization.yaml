@@ -1,8 +1,0 @@
-resources:
-- deployment.yaml
-- service.yaml
-- ingress.yaml
-configMapGenerator:
-- name: color-config
-  literals:
-  - COW_COLOR=yellow
