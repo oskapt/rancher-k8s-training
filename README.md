@@ -1,5 +1,11 @@
 # Training Guide
 
+## Deploy K3s
+
+```bash
+k3sup install --ip=10.68.0.143 --user=root --k3s-version=v1.17.0+k3s.1
+```
+
 ## Kubernetes
 
 ### Pod
@@ -80,7 +86,7 @@ kubectl get pods
 - go look at them
 
 ``` bash
-curl -I rancher01:<port>
+curl -I training-a:<port>
 ```
 
 ### Ingress
@@ -105,8 +111,8 @@ kubectl apply -k deployment/overlay/ingress/fanout
 - deploy rancher-demo application
 
 ```bash
-kustomize build demo
-kubectl apply -k demo
+kustomize build rancher-demo/base
+kubectl apply -k rancher-demo/base
 ```
 
 - visit <https://training-a.cl.monach.us/>
@@ -116,13 +122,13 @@ kubectl apply -k demo
 ### Server Deploy
 
 ```
-docker run -d --restart=unless-stopped -p 80:80 -p 443:443 -v /opt/rancher:/var/lib/rancher rancher/rancher:v2.1.2
+docker run -d --restart=unless-stopped -p 80:80 -p 443:443 -v /opt/rancher:/var/lib/rancher rancher/rancher:v2.3.4
 ```
 
 ### Node Deploy
 
-- Deploy a custom cluster with one node in all three roles
-- Watch it deploy and then show it in the clusters view
+- Show how we would deploy an RKE cluster
+- Import the `training-a` k3s cluster
 
 ### Rancher Server Walkthrough
 
@@ -136,8 +142,14 @@ docker run -d --restart=unless-stopped -p 80:80 -p 443:443 -v /opt/rancher:/var/
 
 ### Application Deployment
 
-- deploy `monachus/rancher-demo` as a workload
+- show workloads on running cluster
+- edit them / delete them
+- redeploy `monachus/rancher-demo` as a workload
     - expose port 8080
 - put an Ingress in front of it
     - use `training-a.cl.monach.us`
 - scale it
+
+## Rancher Application Catalog
+
+- use the Hadoop example
