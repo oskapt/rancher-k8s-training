@@ -5,5 +5,5 @@ resources:
 - ingress.yaml
 bases:
 - ../../../base
-patches:
+patchesStrategicMerge:
 - service.yaml
