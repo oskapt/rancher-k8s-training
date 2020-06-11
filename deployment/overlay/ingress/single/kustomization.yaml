@@ -1,9 +1,0 @@
-namePrefix: dev-
-commonLabels:
-  environment: dev
-resources:
-- ingress.yaml
-bases:
-- ../../../base
-patchesStrategicMerge:
-- service.yaml

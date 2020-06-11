@@ -1,3 +1,0 @@
-[submodule "rancher-demo"]
-	path = rancher-demo
-	url = https://github.com/oskapt/rancher-demo
